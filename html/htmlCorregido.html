@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica HTML Corregida</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-family: sans-serif;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .error-destacado {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Bienvenidos a mi página</h1>
+    </header>
+
+    <main>
+        <p>Este párrafo tiene una etiqueta <span style="color: red;">span cerrada correctamente</span>.</p>
+
+        <img src="https://via.placeholder.com/200x100" alt="Logo HTML" width="200">
+
+        <p>
+            <a href="https://www.google.com" target="_blank">Ir a Google</a>
+        </p>
+
+        <h3>Lista de Elementos</h3>
+        <ul>
+            <li>Elemento 1</li>
+            <li>Elemento 2</li>
+            <li>Elemento 3</li>
+        </ul>
+
+        <h3>Datos de Usuario</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Juan</td>
+                    <td>30</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <hr>
+
+    <section>
+        <h2>Análisis de errores encontrados</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Elemento</th>
+                    <th>Error en el original</th>
+                    <th>Corrección realizada</th>
+                    <th>¿Por qué era un error?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>&lt;title&gt;</strong></td>
+                    <td>No se cerraba.</td>
+                    <td>Se añadió &lt;/title&gt;.</td>
+                    <td>El navegador no sabría dónde termina el título y dónde empieza el cuerpo.</td>
+                </tr>
+                <tr>
+                    <td><strong>&lt;h1&gt;</strong></td>
+                    <td>Cerraba con &lt;/h2&gt;.</td>
+                    <td>Se cerró con &lt;/h1&gt;.</td>
+                    <td>Las etiquetas de apertura y cierre deben ser del mismo nivel.</td>
+                </tr>
+                <tr>
+                    <td><strong>&lt;span&gt;</strong></td>
+                    <td>Estaba abierta y sin ";"</td>
+                    <td>Se cerró y se puso ";"</td>
+                    <td>Sin el cierre, el estilo rojo "se escapa" al resto del texto.</td>
+                </tr>
+                <tr>
+                    <td><strong>&lt;img&gt;</strong></td>
+                    <td>Atributo alt sin comillas.</td>
+                    <td>alt="Logo HTML"</td>
+                    <td>Los valores con espacios necesitan comillas para que el navegador los lea completos.</td>
+                </tr>
+                <tr>
+                    <td><strong>&lt;a&gt;</strong></td>
+                    <td>target="blank"</td>
+                    <td>target="_blank"</td>
+                    <td>El estándar correcto requiere el guion bajo para abrir en pestaña nueva.</td>
+                </tr>
+                <tr>
+                    <td><strong>&lt;ul&gt;</strong></td>
+                    <td>Cerraba con &lt;/ol&gt;.</td>
+                    <td>Se cerró con &lt;/ul&gt;.</td>
+                    <td>No se pueden mezclar tipos de listas (desordenada vs ordenada).</td>
+                </tr>
+                <tr>
+                    <td><strong>&lt;li&gt;</strong></td>
+                    <td>Faltaban los cierres.</td>
+                    <td>Se añadieron &lt;/li&gt;.</td>
+                    <td>Es fundamental para mantener la estructura limpia y evitar fallos visuales.</td>
+                </tr>
+                <tr>
+                    <td><strong>&lt;tr&gt;</strong></td>
+                    <td>Fila de tabla sin cerrar.</td>
+                    <td>Se añadió &lt;/tr&gt;.</td>
+                    <td>Sin el cierre de fila, los datos de la siguiente fila se desordenan.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+</body>
+</html>
