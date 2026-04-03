@@ -1,27 +1,55 @@
 <!DOCTYPE html>
+<!-- Declaración del tipo de documento: le indica al navegador que es HTML5 -->
 <html lang="es">
+<!-- lang="es" define el idioma de la página (español), útil para accesibilidad y SEO -->
+
 <head>
+    <!-- HEAD: contiene metadatos y configuración de la página, no se muestra en pantalla -->
+
     <meta charset="UTF-8" />
+    <!-- Define la codificación de caracteres: permite mostrar tildes, ñ y símbolos especiales -->
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Hace que la página sea responsiva: se adapta al ancho del dispositivo (móvil, tablet, etc.) -->
+
     <title>Mi pagina</title>
+    <!-- Texto que aparece en la pestaña del navegador -->
+
     <style>
+        /* ── ESTILOS CSS EMBEBIDOS ── */
+
         nav {
-            background-color: #f4f4f4;
-            padding: 10px;
-            position: sticky;
-            top: 0;
-            border-bottom: 2px solid #ccc;
+            background-color: #f4f4f4; /* Fondo gris claro para la barra de navegación */
+            padding: 10px;             /* Espacio interno alrededor del contenido */
+            position: sticky;          /* La barra queda fija al hacer scroll */
+            top: 0;                    /* Se "pega" al borde superior de la pantalla */
+            border-bottom: 2px solid #ccc; /* Línea separadora debajo del nav */
         }
-        nav ul { list-style: none; padding: 0; display: flex; gap: 15px; }
-        section { padding: 20px 0; border-bottom: 1px solid #eee; }
+
+        nav ul {
+            list-style: none; /* Elimina los puntos/números de la lista */
+            padding: 0;       /* Quita el sangrado por defecto del navegador */
+            display: flex;    /* Alinea los ítems en fila horizontal */
+            gap: 15px;        /* Espacio entre cada ítem del menú */
+        }
+
+        section {
+            padding: 20px 0;             /* Espacio vertical entre secciones */
+            border-bottom: 1px solid #eee; /* Línea divisoria sutil entre secciones */
+        }
     </style>
 </head>
-<body>
 
+<body>
+<!-- BODY: todo lo que se muestra visualmente en la página -->
+
+    <!-- ── BARRA DE NAVEGACIÓN ──
+         Menú sticky con links de ancla (#id) que saltan a cada sección de la página -->
     <nav>
         <strong>Menú de Navegación:</strong>
         <ul>
             <li><a href="#inicio">Inicio</a></li>
+            <!-- Cada href="#id" hace scroll hasta el elemento con ese id -->
             <li><a href="#ejercicio3">Enlaces</a></li>
             <li><a href="#galeria">Galería</a></li>
             <li><a href="#listas">Listas</a></li>
@@ -30,70 +58,140 @@
         </ul>
     </nav>
 
+    <!-- ── ENCABEZADO PRINCIPAL (id="inicio") ──
+         Sección de bienvenida con distintos niveles de títulos y ejemplos de texto inline -->
     <header id="inicio">
-        <h1>Encabezado Nivel 1</h1>
-        <h2>Encabezado Nivel 2</h2>
+        <h1>Encabezado Nivel 1</h1> <!-- Título principal de la página, el más importante -->
+        <h2>Encabezado Nivel 2</h2> <!-- Subtítulo, jerarquía menor que h1 -->
+
         <p>Este es un párrafo con <br /> salto de línea.</p>
+        <!-- <br /> inserta un salto de línea dentro del mismo párrafo, sin crear uno nuevo -->
+
         <p>Texto con <span style="color: blue; font-weight: bold">span inline</span>.</p>
+        <!-- <span> permite aplicar estilos a una porción de texto sin romper el flujo del párrafo -->
     </header>
 
+    <!-- ── SECCIÓN DE ENLACES (id="ejercicio3") ──
+         Muestra los tres tipos principales de enlaces HTML: externo, mailto y ancla interna -->
     <section id="ejercicio3">
         <h2>Ejercicio 3 - Enlaces</h2>
         <ul>
-            <li><a href="https://www.google.com" target="_blank">Visitar Google</a></li>
-            <li><a href="mailto:mceciliafernandezst@gmail.com">Enviar un mail</a></li>
-            <li><a href="#seccion-destino">Ir a la sección de abajo</a></li>
+            <li>
+                <a href="https://www.google.com" target="_blank">Visitar Google</a>
+                <!-- target="_blank" abre el link en una nueva pestaña del navegador -->
+            </li>
+            <li>
+                <a href="mailto:mceciliafernandezst@gmail.com">Enviar un mail</a>
+                <!-- href="mailto:" abre el cliente de correo del usuario con el destinatario precargado -->
+            </li>
+            <li>
+                <a href="#seccion-destino">Ir a la sección de abajo</a>
+                <!-- Ancla interna: hace scroll hasta el elemento con id="seccion-destino" en esta misma página -->
+            </li>
         </ul>
     </section>
 
+    <!-- ── SECCIÓN GALERÍA (id="galeria") ──
+         Ejemplos de imágenes: una cargada desde una URL externa y otra desde archivo local -->
     <section id="galeria">
         <h2>Galería de Imágenes</h2>
+
         <h3>Imagen desde la Web</h3>
-        <img src="https://i.pinimg.com/564x/5b/02/47/5b0247d140ff9659066d61fa63edc79a.jpg" alt="Un gatito parado" width="400">
-        
+        <img
+            src="https://i.pinimg.com/564x/5b/02/47/5b0247d140ff9659066d61fa63edc79a.jpg"
+            alt="Un gatito parado"
+            <!-- alt: texto alternativo que se muestra si la imagen no carga; importante para accesibilidad -->
+            width="400"
+            <!-- Ancho fijo en píxeles; la altura se ajusta proporcionalmente de forma automática -->
+        >
+
         <h3>Imagen Local</h3>
-        <img src="img/perro.jpg" alt="Un perro con lentes de sol" style="width: 100%; max-width: 500px; height: auto">
+        <img
+            src="img/perro.jpg"
+            <!-- Ruta relativa: la imagen debe estar en una carpeta "img" junto al HTML -->
+            alt="Un perro con lentes de sol"
+            style="width: 100%; max-width: 500px; height: auto"
+            <!-- width:100% hace la imagen fluida; max-width limita su tamaño máximo; height:auto mantiene proporción -->
+        >
     </section>
 
+    <!-- ── SECCIÓN LISTAS (id="listas") ──
+         Muestra los dos tipos de listas HTML: desordenada (ul) y ordenada (ol) -->
     <section id="listas">
         <h2>Listas HTML</h2>
+
         <ul>
+            <!-- Lista desordenada: los ítems se muestran con viñetas (•) -->
             <li>Manzanas</li>
             <li>Bananas</li>
         </ul>
+
         <ol>
+            <!-- Lista ordenada: los ítems se numeran automáticamente (1, 2, 3...) -->
             <li>Abrir editor</li>
             <li>Escribir HTML</li>
         </ol>
     </section>
 
+    <!-- ── SECCIÓN TABLAS (id="tablas") ──
+         Ejemplo de tabla con encabezados, filas y uso de colspan para fusionar celdas -->
     <section id="tablas">
         <h2>Tablas y Horarios</h2>
+
         <table border="1" style="border-collapse: collapse; width: 80%; text-align: center">
+            <!-- border-collapse: collapse hace que los bordes de celdas se fusionen en uno solo -->
+
             <thead>
-                <tr>
-                    <th>Horario</th>
+                <!-- thead agrupa la fila de encabezados; el navegador puede repetirla al imprimir -->
+                <tr> <!-- tr = fila de la tabla -->
+                    <th>Horario</th> <!-- th = celda de encabezado, negrita y centrada por defecto -->
                     <th>Lunes</th>
                     <th>Martes</th>
                 </tr>
             </thead>
+
             <tbody>
+                <!-- tbody agrupa las filas de datos -->
                 <tr>
-                    <td>09:00</td>
+                    <td>09:00</td> <!-- td = celda de datos normal -->
                     <td colspan="2">Taller Intensivo</td>
+                    <!-- colspan="2" hace que esta celda ocupe el espacio de 2 columnas (Lunes + Martes) -->
                 </tr>
             </tbody>
         </table>
     </section>
 
+    <!-- ── SECCIÓN MAPA (id="mapa") ──
+         Muestra un mapa embebido de Google Maps con links que cargan contenido dentro del iframe -->
     <section id="mapa">
+
         <h2 id="seccion-destino">Ubicación: Teatro Colón</h2>
-        <iframe name="ventana_vistas" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0617751755146!2d-58.38573212425983!3d-34.601235172957194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac63022146d%3A0x7abc77040a99f48d!2sTeatro%20Col%C3%B3n!5e0!3m2!1ses-419!2sar!4v1700000000000!5m2!1ses-419!2sar" width="600" height="400" style="border: 0"></iframe>
-        
+        <!-- id="seccion-destino" es el destino del enlace de ancla definido en la sección de enlaces -->
+
+        <!-- name permite que otros links con target="ventana_vistas" carguen su contenido DENTRO de este iframe -->
+        <!-- src es la URL del mapa embebido generada por Google Maps -->
+        <iframe
+            name="ventana_vistas"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0617751755146!2d-58.38573212425983!3d-34.601235172957194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac63022146d%3A0x7abc77040a99f48d!2sTeatro%20Col%C3%B3n!5e0!3m2!1ses-419!2sar!4v1700000000000!5m2!1ses-419!2sar"
+            width="600"
+            height="400"
+            style="border: 0"
+        ></iframe>
+
         <h3>Explorar más dentro del mapa:</h3>
         <ul>
-            <li><a href="https://es.wikipedia.org/wiki/Teatro_Col%C3%B3n" target="ventana_vistas">Ver Wikipedia</a></li>
-            <li><a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.103038676228!2d-58.3835619!3d-34.6001004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacc23114d5d%3A0x633513a817478640!2sObelisco!5e0!3m2!1ses-419!2sar!4v1712170000000" target="ventana_vistas">Ver Obelisco</a></li>
+            <li>
+                <a href="https://es.wikipedia.org/wiki/Teatro_Col%C3%B3n" target="ventana_vistas">
+                    Ver Wikipedia
+                </a>
+                <!-- target="ventana_vistas" hace que el link se abra dentro del iframe de arriba, no en otra pestaña -->
+            </li>
+            <li>
+                <a href="https://www.google.com/maps/embed?..." target="ventana_vistas">
+                    Ver Obelisco
+                </a>
+                <!-- Carga un mapa diferente (el Obelisco) dentro del mismo iframe, reemplazando el anterior -->
+            </li>
         </ul>
     </section>
 
