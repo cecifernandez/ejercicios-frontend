@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructura Semántica HTML5</title>
+    <style>
+        /* Estilos rápidos para visualizar mejor las secciones */
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; }
+        header, nav, main, section, article, aside, footer {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 10px;
+        }
+        main { display: flex; flex-wrap: wrap; }
+        section { flex: 3; }
+        aside { flex: 1; min-width: 200px; background-color: #f9f9f9; }
+        footer { text-align: center; background-color: #333; color: white; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Mi Blog</h1>
+        <p>Aprender a programar</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Tutoriales</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        
+        <section>
+            <h2>Últimas Publicaciones</h2>
+
+            <article>
+                <h3>Introducción a HTML5</h3>
+                <p>Las etiquetas semánticas nos ayudan a que Google entienda mejor nuestro contenido...</p>
+                <a href="#">Leer más</a>
+            </article>
+
+            <article>
+                <h3>¿Qué es CSS?</h3>
+                <p>CSS es el lenguaje que usamos para darle estilo a nuestras etiquetas HTML...</p>
+                <a href="#">Leer más</a>
+            </article>
+        </section>
+
+        <aside>
+            <h4>Sobre mi</h4>
+            <p>Soy estudiante de programacion, apasionada por el desarrollo web.</p>
+            <h4>Enlaces de interés</h4>
+            <ul>
+                <li>MDN Web Docs</li>
+                <li>W3Schools</li>
+            </ul>
+        </aside>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026</p>
+    </footer>
+
+</body>
+</html>
