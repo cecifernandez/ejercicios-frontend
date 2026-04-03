@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <!-- Declaración del tipo de documento: le indica al navegador que es HTML5 -->
 <html lang="es">
-<!-- lang="es" define el idioma de la página (español), útil para accesibilidad y SEO -->
+  <!-- lang="es" define el idioma de la página (español), útil para accesibilidad y SEO -->
 
-<head>
+  <head>
     <!-- HEAD: contiene metadatos y configuración de la página, no se muestra en pantalla -->
 
     <meta charset="UTF-8" />
@@ -16,182 +16,263 @@
     <!-- Texto que aparece en la pestaña del navegador -->
 
     <style>
-        /* ── ESTILOS CSS EMBEBIDOS ── */
+      /* ── ESTILOS CSS EMBEBIDOS ── */
 
-        nav {
-            background-color: #f4f4f4; /* Fondo gris claro para la barra de navegación */
-            padding: 10px;             /* Espacio interno alrededor del contenido */
-            position: sticky;          /* La barra queda fija al hacer scroll */
-            top: 0;                    /* Se "pega" al borde superior de la pantalla */
-            border-bottom: 2px solid #ccc; /* Línea separadora debajo del nav */
-        }
+      nav {
+        background-color: #f4f4f4;
+        padding: 10px;
+        position: sticky;
+        top: 0;
+        border-bottom: 2px solid #ccc;
+      }
 
-        nav ul {
-            list-style: none; /* Elimina los puntos/números de la lista */
-            padding: 0;       /* Quita el sangrado por defecto del navegador */
-            display: flex;    /* Alinea los ítems en fila horizontal */
-            gap: 15px;        /* Espacio entre cada ítem del menú */
-        }
+      nav ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        gap: 15px;
+      }
+      section {
+        padding: 20px 0;
+        border-bottom: 1px solid #eee;
+      }
 
-        section {
-            padding: 20px 0;             /* Espacio vertical entre secciones */
-            border-bottom: 1px solid #eee; /* Línea divisoria sutil entre secciones */
-        }
+      /* ── ESTILOS DEL FORMULARIO ──
+           Se definen aquí para separar la presentación del contenido HTML */
+      .formulario {
+        display: flex; /* Apila los elementos hijos en columna */
+        flex-direction: column;
+        gap: 12px; /* Espacio vertical entre cada campo */
+        max-width: 400px; /* Limita el ancho del formulario */
+      }
+
+      .formulario label {
+        font-weight: bold; /* Etiquetas en negrita para mejor legibilidad */
+        margin-bottom: 2px;
+      }
+
+      .formulario input {
+        padding: 8px; /* Espacio interno dentro del campo de texto */
+        border: 1px solid #ccc;
+        border-radius: 4px; /* Bordes redondeados */
+        font-size: 14px;
+      }
+
+      /* Grupo de botones: los coloca en fila con separación */
+      .botones {
+        display: flex;
+        gap: 10px;
+        margin-top: 8px;
+      }
+
+      .btn-enviar {
+        background-color: #4caf50; /* Verde para acción principal */
+        color: white;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer; /* Cambia el cursor a manito al pasar por encima */
+      }
+
+      .btn-limpiar {
+        background-color: #e0e0e0; /* Gris neutro para acción secundaria */
+        color: #333;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-<!-- BODY: todo lo que se muestra visualmente en la página -->
+  <body>
+    <!-- BODY: todo lo que se muestra visualmente en la página -->
 
     <!-- ── BARRA DE NAVEGACIÓN ──
          Menú sticky con links de ancla (#id) que saltan a cada sección de la página -->
     <nav>
-        <strong>Menú de Navegación:</strong>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <!-- Cada href="#id" hace scroll hasta el elemento con ese id -->
-            <li><a href="#ejercicio3">Enlaces</a></li>
-            <li><a href="#galeria">Galería</a></li>
-            <li><a href="#listas">Listas</a></li>
-            <li><a href="#tablas">Tablas</a></li>
-            <li><a href="#mapa">Ubicación</a></li>
-        </ul>
+      <strong>Menú de Navegación:</strong>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#ejercicio3">Enlaces</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#listas">Listas</a></li>
+        <li><a href="#tablas">Tablas</a></li>
+        <li><a href="#mapa">Ubicación</a></li>
+        <li><a href="#formulario">Formulario</a></li>
+        <!-- Nuevo ítem de nav apuntando a la sección del formulario -->
+      </ul>
     </nav>
 
-    <!-- ── ENCABEZADO PRINCIPAL (id="inicio") ──
-         Sección de bienvenida con distintos niveles de títulos y ejemplos de texto inline -->
+    <!-- ── ENCABEZADO PRINCIPAL (id="inicio") ── -->
     <header id="inicio">
-        <h1>Encabezado Nivel 1</h1> <!-- Título principal de la página, el más importante -->
-        <h2>Encabezado Nivel 2</h2> <!-- Subtítulo, jerarquía menor que h1 -->
-
-        <p>Este es un párrafo con <br /> salto de línea.</p>
-        <!-- <br /> inserta un salto de línea dentro del mismo párrafo, sin crear uno nuevo -->
-
-        <p>Texto con <span style="color: blue; font-weight: bold">span inline</span>.</p>
-        <!-- <span> permite aplicar estilos a una porción de texto sin romper el flujo del párrafo -->
+      <h1>Encabezado Nivel 1</h1>
+      <h2>Encabezado Nivel 2</h2>
+      <p>
+        Este es un párrafo con <br />
+        salto de línea.
+      </p>
+      <p>
+        Texto con
+        <span style="color: blue; font-weight: bold">span inline</span>.
+      </p>
     </header>
 
-    <!-- ── SECCIÓN DE ENLACES (id="ejercicio3") ──
-         Muestra los tres tipos principales de enlaces HTML: externo, mailto y ancla interna -->
+    <!-- ── SECCIÓN DE ENLACES (id="ejercicio3") ── -->
     <section id="ejercicio3">
-        <h2>Ejercicio 3 - Enlaces</h2>
-        <ul>
-            <li>
-                <a href="https://www.google.com" target="_blank">Visitar Google</a>
-                <!-- target="_blank" abre el link en una nueva pestaña del navegador -->
-            </li>
-            <li>
-                <a href="mailto:mceciliafernandezst@gmail.com">Enviar un mail</a>
-                <!-- href="mailto:" abre el cliente de correo del usuario con el destinatario precargado -->
-            </li>
-            <li>
-                <a href="#seccion-destino">Ir a la sección de abajo</a>
-                <!-- Ancla interna: hace scroll hasta el elemento con id="seccion-destino" en esta misma página -->
-            </li>
-        </ul>
+      <h2>Ejercicio 3 - Enlaces</h2>
+      <ul>
+        <li>
+          <a href="https://www.google.com" target="_blank">Visitar Google</a>
+        </li>
+        <li>
+          <a href="mailto:mceciliafernandezst@gmail.com">Enviar un mail</a>
+        </li>
+        <li>
+          <a href="#seccion-destino">Ir a la sección de abajo</a>
+        </li>
+      </ul>
     </section>
 
-    <!-- ── SECCIÓN GALERÍA (id="galeria") ──
-         Ejemplos de imágenes: una cargada desde una URL externa y otra desde archivo local -->
+    <!-- ── SECCIÓN GALERÍA (id="galeria") ── -->
     <section id="galeria">
-        <h2>Galería de Imágenes</h2>
-
-        <h3>Imagen desde la Web</h3>
-        <!-- alt: texto alternativo que se muestra si la imagen no carga; importante para accesibilidad -->
-        <img
-            src="https://i.pinimg.com/564x/5b/02/47/5b0247d140ff9659066d61fa63edc79a.jpg"
-            alt="Un gatito parado"
-            width="400"
-        >
-
-        <h3>Imagen Local</h3>
-        <!-- src es la ruta relativa: la imagen debe estar en una carpeta "img" junto al HTML -->
-        <img
-            src="img/perro.jpg"
-            alt="Un perro con lentes de sol"
-            style="width: 100%; max-width: 500px; height: auto"
-        >
+      <h2>Galería de Imágenes</h2>
+      <h3>Imagen desde la Web</h3>
+      <img
+        src="https://i.pinimg.com/564x/5b/02/47/5b0247d140ff9659066d61fa63edc79a.jpg"
+        alt="Un gatito parado"
+        width="400"
+      />
+      <h3>Imagen Local</h3>
+      <img
+        src="img/perro.jpg"
+        alt="Un perro con lentes de sol"
+        style="width: 100%; max-width: 500px; height: auto"
+      />
     </section>
 
-    <!-- ── SECCIÓN LISTAS (id="listas") ──
-         Muestra los dos tipos de listas HTML: desordenada (ul) y ordenada (ol) -->
+    <!-- ── SECCIÓN LISTAS (id="listas") ── -->
     <section id="listas">
-        <h2>Listas HTML</h2>
-
-        <ul>
-            <!-- Lista desordenada: los ítems se muestran con viñetas (•) -->
-            <li>Manzanas</li>
-            <li>Bananas</li>
-        </ul>
-
-        <ol>
-            <!-- Lista ordenada: los ítems se numeran automáticamente (1, 2, 3...) -->
-            <li>Abrir editor</li>
-            <li>Escribir HTML</li>
-        </ol>
+      <h2>Listas HTML</h2>
+      <ul>
+        <li>Manzanas</li>
+        <li>Bananas</li>
+      </ul>
+      <ol>
+        <li>Abrir editor</li>
+        <li>Escribir HTML</li>
+      </ol>
     </section>
 
-    <!-- ── SECCIÓN TABLAS (id="tablas") ──
-         Ejemplo de tabla con encabezados, filas y uso de colspan para fusionar celdas -->
+    <!-- ── SECCIÓN TABLAS (id="tablas") ── -->
     <section id="tablas">
-        <h2>Tablas y Horarios</h2>
-
-        <table border="1" style="border-collapse: collapse; width: 80%; text-align: center">
-            <!-- border-collapse: collapse hace que los bordes de celdas se fusionen en uno solo -->
-
-            <thead>
-                <!-- thead agrupa la fila de encabezados; el navegador puede repetirla al imprimir -->
-                <tr> <!-- tr = fila de la tabla -->
-                    <th>Horario</th> <!-- th = celda de encabezado, negrita y centrada por defecto -->
-                    <th>Lunes</th>
-                    <th>Martes</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <!-- tbody agrupa las filas de datos -->
-                <tr>
-                    <td>09:00</td> <!-- td = celda de datos normal -->
-                    <td colspan="2">Taller Intensivo</td>
-                    <!-- colspan="2" hace que esta celda ocupe el espacio de 2 columnas (Lunes + Martes) -->
-                </tr>
-            </tbody>
-        </table>
+      <h2>Tablas y Horarios</h2>
+      <table
+        border="1"
+        style="border-collapse: collapse; width: 80%; text-align: center"
+      >
+        <thead>
+          <tr>
+            <th>Horario</th>
+            <th>Lunes</th>
+            <th>Martes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>09:00</td>
+            <td colspan="2">Taller Intensivo</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
 
-    <!-- ── SECCIÓN MAPA (id="mapa") ──
-         Muestra un mapa embebido de Google Maps con links que cargan contenido dentro del iframe -->
+    <!-- ── SECCIÓN MAPA (id="mapa") ── -->
     <section id="mapa">
-
-        <h2 id="seccion-destino">Ubicación: Teatro Colón</h2>
-        <!-- id="seccion-destino" es el destino del enlace de ancla definido en la sección de enlaces -->
-
-        <!-- name permite que otros links con target="ventana_vistas" carguen su contenido DENTRO de este iframe -->
-        <!-- src es la URL del mapa embebido generada por Google Maps -->
-        <iframe
-            name="ventana_vistas"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0617751755146!2d-58.38573212425983!3d-34.601235172957194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac63022146d%3A0x7abc77040a99f48d!2sTeatro%20Col%C3%B3n!5e0!3m2!1ses-419!2sar!4v1700000000000!5m2!1ses-419!2sar"
-            width="600"
-            height="400"
-            style="border: 0"
-        ></iframe>
-
-        <h3>Explorar más dentro del mapa:</h3>
-        <ul>
-            <li>
-                <a href="https://es.wikipedia.org/wiki/Teatro_Col%C3%B3n" target="ventana_vistas">
-                    Ver Wikipedia
-                </a>
-                <!-- target="ventana_vistas" hace que el link se abra dentro del iframe de arriba, no en otra pestaña -->
-            </li>
-            <li>
-                <a href="https://www.google.com/maps/embed?..." target="ventana_vistas">
-                    Ver Obelisco
-                </a>
-                <!-- Carga un mapa diferente (el Obelisco) dentro del mismo iframe, reemplazando el anterior -->
-            </li>
-        </ul>
+      <h2 id="seccion-destino">Ubicación: Teatro Colón</h2>
+      <iframe
+        name="ventana_vistas"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0617751755146!2d-58.38573212425983!3d-34.601235172957194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccac63022146d%3A0x7abc77040a99f48d!2sTeatro%20Col%C3%B3n!5e0!3m2!1ses-419!2sar!4v1700000000000!5m2!1ses-419!2sar"
+        width="600"
+        height="400"
+        style="border: 0"
+      ></iframe>
+      <h3>Explorar más dentro del mapa:</h3>
+      <ul>
+        <li>
+          <a
+            href="https://es.wikipedia.org/wiki/Teatro_Col%C3%B3n"
+            target="ventana_vistas"
+            >Ver Wikipedia</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.103038676228!2d-58.3835619!3d-34.6001004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccacc23114d5d%3A0x633513a817478640!2sObelisco!5e0!3m2!1ses-419!2sar!4v1712170000000"
+            target="ventana_vistas"
+            >Ver Obelisco</a
+          >
+        </li>
+      </ul>
     </section>
 
-</body>
+    <!-- ════════════════════════════════════════════
+         SECCIÓN FORMULARIO (id="formulario") 
+    ════════════════════════════════════════════ -->
+    <section id="formulario">
+      <h2>Formulario de Contacto</h2>
+
+      <!-- <form>: contenedor principal del formulario.
+             - action="#" indica adónde se envían los datos (# = esta misma página, por ahora)
+             - method="post" envía los datos de forma segura en el cuerpo de la petición HTTP
+               (la alternativa es method="get", que los muestra en la URL) -->
+      <form action="#" method="post" class="formulario">
+        <!-- ── CAMPO NOMBRE ── -->
+        <!-- <label>: etiqueta visible asociada al campo. 
+                 for="nombre" la vincula al input con id="nombre",
+                 así al hacer clic en el texto el cursor va directo al campo -->
+        <label for="nombre">Nombre:</label>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          placeholder="Ingresá tu nombre"
+          required
+        />
+
+        <!-- ── CAMPO APELLIDO ── -->
+        <label for="apellido">Apellido:</label>
+        <input
+          type="text"
+          id="apellido"
+          name="apellido"
+          placeholder="Ingresá tu apellido"
+          required
+        />
+
+        <!-- ── CAMPO EMAIL ──
+                 type="email" activa validación automática del navegador:
+                 verifica que el texto contenga "@" y un dominio válido antes de enviar -->
+        <label for="email">Correo electrónico:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="ejemplo@correo.com"
+          required
+        />
+
+        <!-- ── BOTONES ── -->
+        <div class="botones">
+          <!-- type="submit": envía el formulario al action definido en <form> -->
+          <button type="submit" class="btn-enviar">Enviar</button>
+
+          <!-- type="reset": limpia TODOS los campos del formulario automáticamente,
+                     sin necesidad de JavaScript -->
+          <button type="reset" class="btn-limpiar">Limpiar</button>
+        </div>
+      </form>
+    </section>
+  </body>
 </html>
+
