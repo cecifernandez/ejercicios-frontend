@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Star Wars</title>
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        background-color: #0b0b0b;
+        color: #f0f0f0;
+      }
+      header {
+        background-color: #ffe81f;
+        color: black;
+        padding: 20px;
+        text-align: center;
+      }
+      main {
+        max-width: 900px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #1a1a1a;
+        border-radius: 8px;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        border: 2px solid #ffe81f;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        background-color: #222;
+      }
+      th,
+      td {
+        border: 1px solid #444;
+        padding: 12px;
+        text-align: left;
+      }
+      th {
+        background-color: #333;
+        color: #ffe81f;
+      }
+      form {
+        background: #333;
+        padding: 20px;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 4px;
+        border: none;
+      }
+      button {
+        background-color: #ffe81f;
+        color: black;
+        padding: 10px 20px;
+        border: none;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 0.9em;
+        color: #888;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>STAR WARS</h1>
+      <p><em>"Hace mucho tiempo, en una galaxia muy, muy lejana..."</em></p>
+    </header>
+
+    <main>
+      <section style="margin-top: 30px; text-align: center">
+        <div
+          style="
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+          "
+        >
+          <iframe width="1257" height="480" src="https://www.youtube.com/embed/8NoOsPwYacA" title="Disney Star Wars Intro" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </section>
+      <section>
+        <h2>Explora la Galaxia</h2>
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg"
+          alt="Logo de Star Wars"
+          style="max-width: 300px; display: block; margin: 0 auto 20px"
+        />
+        <p>
+          Desde la caída de la República hasta el surgimiento de la Primera
+          Orden, la historia de Star Wars es una lucha constante entre el Lado
+          Luminoso y el Lado Oscuro de la Fuerza.
+        </p>
+      </section>
+
+      <section>
+        <h3>Facciones Principales</h3>
+        <ul>
+          <li>
+            <strong>La Orden Jedi:</strong> Guardianes de la paz y la justicia.
+          </li>
+          <li>
+            <strong>El Imperio Galáctico:</strong> Régimen autoritario liderado
+            por los Sith.
+          </li>
+          <li>
+            <strong>La Alianza Rebelde:</strong> Luchadores por la libertad de
+            los pueblos.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Cronología de Películas Icónicas</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Episodio</th>
+              <th>Título</th>
+              <th>Año de Estreno</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>IV</td>
+              <td>Una Nueva Esperanza</td>
+              <td>1977</td>
+            </tr>
+            <tr>
+              <td>V</td>
+              <td>El Imperio Contraataca</td>
+              <td>1980</td>
+            </tr>
+            <tr>
+              <td>VI</td>
+              <td>El Retorno del Jedi</td>
+              <td>1983</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h3>Únete a la Resistencia</h3>
+        <p>
+          Completa tus datos para recibir actualizaciones de la base rebelde:
+        </p>
+        <form action="#">
+          <label for="nombre">Nombre del Cadete:</label>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Tu nombre o alias"
+            required
+          />
+
+          <label for="faccion">Elige tu bando:</label>
+          <select id="faccion" name="faccion">
+            <option value="jedi">Jedi / Rebelde</option>
+            <option value="sith">Sith / Imperio</option>
+            <option value="cazarrecompensas">Cazarrecompensas</option>
+          </select>
+
+          <label for="mensaje">Mensaje para el Consejo:</label>
+          <textarea
+            id="mensaje"
+            name="mensaje"
+            rows="4"
+            placeholder="¿Qué habilidades tienes?"
+          ></textarea>
+
+          <button type="submit">Enviar a la Holored</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        &copy; 2026 Star Wars. Todos los derechos reservados a Disney/Lucasfilm.
+      </p>
+      <p>Que la Fuerza te acompañe.</p>
+    </footer>
+  </body>
+</html>
